@@ -1,43 +1,251 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>3D AR Menu</title>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Margherita Pizza | AR Menu</title>
 
   <script type="module"
     src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js">
   </script>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
+      background: #fff8f1;
+      color: #2b211b;
+    }
+
+    /* Header */
+
+    header {
+      padding: 22px 20px 18px;
+      background: #ffffff;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+
+    .restaurant-name {
+      font-size: 14px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #a45b32;
+      font-weight: bold;
+    }
+
+    header h1 {
+      margin: 8px 0 0;
+      font-size: 28px;
+    }
+
+    /* Food information */
+
+    .food-info {
+      padding: 24px 20px 10px;
       text-align: center;
     }
 
-    h2 {
-      margin: 20px;
+    .food-info h2 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    .price {
+      margin-top: 8px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #b85c2f;
+    }
+
+    .description {
+      max-width: 600px;
+      margin: 14px auto;
+      line-height: 1.6;
+      color: #6d625b;
+      font-size: 15px;
+    }
+
+    /* 3D viewer */
+
+    .viewer-container {
+      margin: 10px auto;
+      max-width: 800px;
+      background: #ffffff;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
     }
 
     model-viewer {
       width: 100%;
-      height: 75vh;
+      height: 55vh;
+      min-height: 350px;
+      background: #f5eee7;
+    }
+
+    /* AR Button */
+
+    .ar-button {
+      margin: 18px auto 25px;
+      display: block;
+      border: none;
+      border-radius: 50px;
+      padding: 15px 30px;
+      font-size: 16px;
+      font-weight: bold;
+      background: #2b211b;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.18);
+    }
+
+    .ar-button:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Ingredients */
+
+    .ingredients {
+      max-width: 700px;
+      margin: 10px auto 35px;
+      padding: 25px 20px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    }
+
+    .ingredients h3 {
+      margin-top: 0;
+      font-size: 21px;
+    }
+
+    .ingredients p {
+      color: #6d625b;
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+
+    /* Footer */
+
+    footer {
+      padding: 20px;
+      text-align: center;
+      font-size: 13px;
+      color: #8a7d73;
+    }
+
+    /* Mobile */
+
+    @media (max-width: 600px) {
+
+      header h1 {
+        font-size: 24px;
+      }
+
+      .food-info h2 {
+        font-size: 27px;
+      }
+
+      model-viewer {
+        height: 50vh;
+        min-height: 320px;
+      }
+
+      .description {
+        font-size: 14px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <h2>My 3D Menu</h2>
+  <!-- Restaurant Header -->
 
-  <model-viewer
-    src="09_08_2026.glb"
-    camera-controls
-    auto-rotate
-    ar
-    ar-modes="webxr scene-viewer quick-look"
-    shadow-intensity="1">
-  </model-viewer>
+  <header>
+    <div class="restaurant-name">
+      Your Restaurant
+    </div>
+
+    <h1>Our Signature Menu</h1>
+  </header>
+
+
+  <!-- Food Information -->
+
+  <section class="food-info">
+
+    <h2>Margherita Pizza</h2>
+
+    <div class="price">
+      ₹299
+    </div>
+
+    <p class="description">
+      A timeless Italian classic made with a perfectly baked,
+      crispy-yet-soft crust, rich tomato sauce, creamy mozzarella
+      and fragrant fresh basil. Simple, fresh and full of flavour.
+    </p>
+
+  </section>
+
+
+  <!-- 3D AR Model -->
+
+  <div class="viewer-container">
+
+    <model-viewer
+      src="09_08_2026.glb"
+      camera-controls
+      auto-rotate
+      ar
+      ar-modes="webxr scene-viewer quick-look"
+      shadow-intensity="1"
+      exposure="1">
+
+      <button
+        slot="ar-button"
+        class="ar-button">
+        ✨ View This Dish in AR
+      </button>
+
+    </model-viewer>
+
+  </div>
+
+
+  <!-- Ingredients -->
+
+  <section class="ingredients">
+
+    <h3>🍕 Ingredients</h3>
+
+    <p>
+      Our Margherita Pizza is prepared with freshly made pizza dough,
+      premium tomato sauce, mozzarella cheese, fresh basil leaves,
+      extra virgin olive oil and a carefully selected blend of
+      herbs and seasonings.
+    </p>
+
+  </section>
+
+
+  <!-- Footer -->
+
+  <footer>
+    Scan • Explore • Experience
+    <br>
+    3D & AR Menu
+  </footer>
 
 </body>
 </html>
