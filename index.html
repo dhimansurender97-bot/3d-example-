@@ -3,11 +3,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-
-  <title>Margherita Pizza | AR Menu</title>
+  <title>3D Cake Menu</title>
 
   <script type="module"
     src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js">
@@ -21,231 +19,239 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #fff8f1;
-      color: #2b211b;
+      background: #fff7f9;
+      color: #222;
     }
-
-    /* Header */
 
     header {
-      padding: 22px 20px 18px;
-      background: #ffffff;
+      background: #111;
+      color: white;
       text-align: center;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    }
-
-    .restaurant-name {
-      font-size: 14px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #a45b32;
-      font-weight: bold;
+      padding: 30px 15px;
     }
 
     header h1 {
-      margin: 8px 0 0;
-      font-size: 28px;
-    }
-
-    /* Food information */
-
-    .food-info {
-      padding: 24px 20px 10px;
-      text-align: center;
-    }
-
-    .food-info h2 {
       margin: 0;
       font-size: 30px;
     }
 
-    .price {
-      margin-top: 8px;
-      font-size: 22px;
-      font-weight: bold;
-      color: #b85c2f;
+    header p {
+      margin: 8px 0 0;
+      color: #ddd;
     }
 
-    .description {
-      max-width: 600px;
-      margin: 14px auto;
-      line-height: 1.6;
-      color: #6d625b;
-      font-size: 15px;
+    .menu {
+      max-width: 1100px;
+      margin: auto;
+      padding: 25px 15px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
     }
 
-    /* 3D viewer */
-
-    .viewer-container {
-      margin: 10px auto;
-      max-width: 800px;
-      background: #ffffff;
-      border-radius: 24px;
+    .cake {
+      background: white;
+      border-radius: 18px;
       overflow: hidden;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+      padding-bottom: 18px;
     }
 
     model-viewer {
       width: 100%;
-      height: 55vh;
-      min-height: 350px;
-      background: #f5eee7;
+      height: 300px;
+      background: #f8f8f8;
     }
 
-    /* AR Button */
-
-    .ar-button {
-      margin: 18px auto 25px;
-      display: block;
-      border: none;
-      border-radius: 50px;
-      padding: 15px 30px;
-      font-size: 16px;
-      font-weight: bold;
-      background: #2b211b;
-      color: white;
-      cursor: pointer;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.18);
+    .cake-info {
+      padding: 15px 18px;
     }
 
-    .ar-button:hover {
-      transform: translateY(-2px);
-    }
-
-    /* Ingredients */
-
-    .ingredients {
-      max-width: 700px;
-      margin: 10px auto 35px;
-      padding: 25px 20px;
-      background: white;
-      border-radius: 20px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
-    }
-
-    .ingredients h3 {
-      margin-top: 0;
+    .cake-info h2 {
+      margin: 0 0 5px;
       font-size: 21px;
     }
 
-    .ingredients p {
-      color: #6d625b;
-      line-height: 1.7;
-      margin-bottom: 0;
+    .cake-info p {
+      margin: 0 0 15px;
+      color: #666;
     }
 
-    /* Footer */
+    .ar-button {
+      display: inline-block;
+      background: #e75480;
+      color: white;
+      padding: 11px 18px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
     footer {
-      padding: 20px;
       text-align: center;
-      font-size: 13px;
-      color: #8a7d73;
-    }
-
-    /* Mobile */
-
-    @media (max-width: 600px) {
-
-      header h1 {
-        font-size: 24px;
-      }
-
-      .food-info h2 {
-        font-size: 27px;
-      }
-
-      model-viewer {
-        height: 50vh;
-        min-height: 320px;
-      }
-
-      .description {
-        font-size: 14px;
-      }
+      padding: 25px;
+      background: #111;
+      color: white;
+      margin-top: 20px;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Restaurant Header -->
-
-  <header>
-    <div class="restaurant-name">
-      Your Restaurant
-    </div>
-
-    <h1>Our Signature Menu</h1>
-  </header>
+<header>
+  <h1>🍰 Our 3D Cake Menu</h1>
+  <p>Explore our cakes in 3D and AR</p>
+</header>
 
 
-  <!-- Food Information -->
+<div class="menu">
 
-  <section class="food-info">
-
-    <h2>Margherita Pizza</h2>
-
-    <div class="price">
-      ₹299
-    </div>
-
-    <p class="description">
-      A timeless Italian classic made with a perfectly baked,
-      crispy-yet-soft crust, rich tomato sauce, creamy mozzarella
-      and fragrant fresh basil. Simple, fresh and full of flavour.
-    </p>
-
-  </section>
-
-
-  <!-- 3D AR Model -->
-
-  <div class="viewer-container">
+  <!-- Cake 1 -->
+  <div class="cake">
 
     <model-viewer
-      src="09_08_2026.glb"
+      src="chocolate.glb"
+      alt="Chocolate Cake"
       camera-controls
       auto-rotate
       ar
       ar-modes="webxr scene-viewer quick-look"
-      shadow-intensity="1"
-      exposure="1">
-
-      <button
-        slot="ar-button"
-        class="ar-button">
-        ✨ View This Dish in AR
-      </button>
+      shadow-intensity="1">
 
     </model-viewer>
+
+    <div class="cake-info">
+      <h2>Chocolate Truffle Cake</h2>
+      <p>Rich chocolate cake with creamy frosting.</p>
+
+      <a class="ar-button"
+         href="chocolate.glb"
+         download>
+        Download 3D
+      </a>
+    </div>
 
   </div>
 
 
-  <!-- Ingredients -->
+  <!-- Cake 2 -->
+  <div class="cake">
 
-  <section class="ingredients">
+    <model-viewer
+      src="strawberry.glb"
+      alt="Strawberry Cake"
+      camera-controls
+      auto-rotate
+      ar
+      ar-modes="webxr scene-viewer quick-look"
+      shadow-intensity="1">
 
-    <h3>🍕 Ingredients</h3>
+    </model-viewer>
 
-    <p>
-      Our Margherita Pizza is prepared with freshly made pizza dough,
-      premium tomato sauce, mozzarella cheese, fresh basil leaves,
-      extra virgin olive oil and a carefully selected blend of
-      herbs and seasonings.
-    </p>
+    <div class="cake-info">
+      <h2>Strawberry Cake</h2>
+      <p>Fresh strawberry cake with cream.</p>
 
-  </section>
+      <a class="ar-button"
+         href="strawberry.glb"
+         download>
+        Download 3D
+      </a>
+    </div>
+
+  </div>
 
 
-  <!-- Footer -->
+  <!-- Cake 3 -->
+  <div class="cake">
 
-  <footer>
-    Scan • Explore • Experience
-    <br>
-    3D & AR Menu
-  </footer>
+    <model-viewer
+      src="wedding.glb"
+      alt="Wedding Cake"
+      camera-controls
+      auto-rotate
+      ar
+      ar-modes="webxr scene-viewer quick-look"
+      shadow-intensity="1">
+
+    </model-viewer>
+
+    <div class="cake-info">
+      <h2>Wedding Cake</h2>
+      <p>Elegant multi-layer wedding cake.</p>
+
+      <a class="ar-button"
+         href="wedding.glb"
+         download>
+        Download 3D
+      </a>
+    </div>
+
+  </div>
+
+
+  <!-- Cake 4 -->
+  <div class="cake">
+
+    <model-viewer
+      src="birthday.glb"
+      alt="Birthday Cake"
+      camera-controls
+      auto-rotate
+      ar
+      ar-modes="webxr scene-viewer quick-look"
+      shadow-intensity="1">
+
+    </model-viewer>
+
+    <div class="cake-info">
+      <h2>Birthday Cake</h2>
+      <p>Colorful cake for birthday celebrations.</p>
+
+      <a class="ar-button"
+         href="birthday.glb"
+         download>
+        Download 3D
+      </a>
+    </div>
+
+  </div>
+
+
+  <!-- Cake 5 -->
+  <div class="cake">
+
+    <model-viewer
+      src="cupcake.glb"
+      alt="Cupcakes"
+      camera-controls
+      auto-rotate
+      ar
+      ar-modes="webxr scene-viewer quick-look"
+      shadow-intensity="1">
+
+    </model-viewer>
+
+    <div class="cake-info">
+      <h2>Cupcakes</h2>
+      <p>Beautiful cupcakes for every occasion.</p>
+
+      <a class="ar-button"
+         href="cupcake.glb"
+         download>
+        Download 3D
+      </a>
+    </div>
+
+  </div>
+
+</div>
+
+
+<footer>
+  Scan • Explore in 3D • View in AR
+</footer>
 
 </body>
 </html>
